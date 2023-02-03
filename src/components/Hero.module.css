@@ -1,0 +1,12 @@
+.Hero {
+  /* position: relative; */
+  height: 100%;
+  width: 100%;
+  background-image: lightgreen;
+}
+
+.imgContainer {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+}
