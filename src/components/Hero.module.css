@@ -3,7 +3,7 @@
   isolation: isolate;
   /* postion: unset; */
   margin-top: 4rem;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   /* padding: 1rem; */
 }
@@ -82,9 +82,10 @@
     padding-block: 2rem;
     padding-inline: 4rem;
     height: 80%;
-    background: whitesmoke;
-    /* background: var(--gradient-black-tourmaline); 
-    background-size: 200%;
+    background: var(--amethyst-bg-2);
+    /* background: white; */
+    /* background: var(--gradient-black-tourmaline); */
+    /* background-size: 200%;
     background-position: bottom; */
   }
 
@@ -123,6 +124,7 @@
   .heroBtn {
     /* color: black;
     border-color: black; */
+    background: white;
     max-width: 10rem;
     height: 3rem;
   }

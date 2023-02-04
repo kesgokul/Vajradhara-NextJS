@@ -18,6 +18,51 @@
     source: url("/fonts/Aboreto-Regular.ttf") format("ttf");
   } */
 
+  --moonstone-bg-dark: linear-gradient(135deg, #1c1c1c, #0e0e0e),
+    radial-gradient(at top left, circle, #1c1c1c, #0e0e0e, #080810),
+    radial-gradient(at bottom right, circle, #1c1c1c, #080810, #0e0e0e),
+    radial-gradient(at center, circle, #1c1c1c, #080810, #0e0e0e, #1c1c1c),
+    radial-gradient(at top right, circle, #0e0e0e, #080810, #1c1c1c),
+    radial-gradient(at bottom left, circle, #0e0e0e, #1c1c1c, #080810);
+
+  --amethyst-bg-3: linear-gradient(135deg, #f2f0f1, #e8e6e7),
+    radial-gradient(at top left, circle, #f2f0f1, #e8e6e7, #c1c9d0),
+    radial-gradient(at bottom right, circle, #f2f0f1, #c1c9d0, #e8e6e7),
+    radial-gradient(at center, circle, #f2f0f1, #c1c9d0, #e8e6e7, #f2f0f1),
+    radial-gradient(at top right, circle, #e8e6e7, #c1c9d0, #f2f0f1),
+    radial-gradient(at bottom left, circle, #e8e6e7, #f2f0f1, #c1c9d0);
+
+  --amethyst-bg-2: linear-gradient(to bottom, #f2f0f1, #e8e6e7),
+    radial-gradient(circle, #f2f0f1, #e8e6e7, #c1c9d0),
+    radial-gradient(circle, #f2f0f1, #c1c9d0, #e8e6e7),
+    radial-gradient(circle, #f2f0f1, #c1c9d0, #e8e6e7, #f2f0f1),
+    radial-gradient(circle, #e8e6e7, #c1c9d0, #f2f0f1),
+    radial-gradient(circle, #e8e6e7, #f2f0f1, #c1c9d0);
+
+  --amethyst-bg: linear-gradient(to bottom, #f9f7f8, #f2ecec),
+    radial-gradient(circle, #f9f7f8, #f2ecec, #c7d6e1),
+    radial-gradient(circle, #f9f7f8, #c7d6e1, #f2ecec),
+    radial-gradient(circle, #f9f7f8, #c7d6e1, #f2ecec, #f9f7f8),
+    radial-gradient(circle, #f2ecec, #c7d6e1, #f9f7f8),
+    radial-gradient(circle, #f2ecec, #f9f7f8, #c7d6e1);
+
+  --lab-bg-2: linear-gradient(to bottom, #f8f7f9, #ececf2),
+    radial-gradient(circle, #f8f7f9, #ececf2, #c7d6e1),
+    radial-gradient(circle, #f8f7f9, #c7d6e1, #ececf2),
+    radial-gradient(circle, #f8f7f9, #c7d6e1, #ececf2, #f8f7f9),
+    radial-gradient(circle, #ececf2, #c7d6e1, #f8f7f9),
+    radial-gradient(circle, #ececf2, #f8f7f9, #c7d6e1);
+
+  --lab-bg: linear-gradient(to bottom, #f8f7f9, #ececf2),
+    radial-gradient(circle, #f8f7f9, #ececf2, #c7d6e1),
+    radial-gradient(circle, #f8f7f9, #c7d6e1, #ececf2);
+
+  --moonstone-bg: linear-gradient(135deg, #faf7f8, #f2ecec),
+    radial-gradient(at top left, circle, #faf7f8, #f2ecec, #c7d6e1),
+    radial-gradient(at bottom right, circle, #faf7f8, #c7d6e1, #f2ecec),
+    radial-gradient(at center, circle, #faf7f8, #c7d6e1, #f2ecec, #faf7f8),
+    radial-gradient(at top right, circle, #f2ecec, #c7d6e1, #faf7f8);
+
   --gradient-copper-brass: linear-gradient(to right, #b87333, #bfbfbf);
 
   --gradient-clear-quartz: linear-gradient(
@@ -178,7 +223,6 @@ body {
 }
 
 body {
-  /* background: var(--gradient-black-tourmaline); */
   background: white;
   min-height: 100vh;
   overflow: scroll;
