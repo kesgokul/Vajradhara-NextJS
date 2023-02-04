@@ -1,12 +1,144 @@
-.Hero {
-  /* position: relative; */
+.hero {
+  position: relative;
+  isolation: isolate;
+  /* postion: unset; */
+  margin-top: 4rem;
   height: 100%;
   width: 100%;
-  background-image: lightgreen;
+  /* padding: 1rem; */
 }
 
+/* ======================================================
+          action
+    ======================================================*/
+.heroAction {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  translate: -50%;
+  /* background: white; */
+}
+
+.actionText {
+  display: none;
+}
+
+.heroBtn {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border: 1px solid white;
+  outline-color: transparent;
+
+  transition: all 0.1s linear;
+}
+
+.heroBtn:is(:hover, :active) {
+  /* font-weight: bold; */
+  /* background: black; */
+  color: black;
+  background: var(--gradient-sunstone);
+  border: 1px solid black;
+  /* border-radius: 0.5rem; */
+}
+
+/* ======================================================
+          img container
+    ======================================================*/
 .imgContainer {
   /* position: relative; */
   width: 100%;
-  height: 100%;
+  height: 60%;
+  overflow: hidden;
+  /* padding: 2rem; */
+}
+
+.imgContainer img {
+  filter: saturate(90%);
+  scale: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.imgContainer img:hover {
+  filter: none;
+  scale: 1.1;
+  /* border-radius: 1rem; */
+}
+
+@media (min-width: 640px) {
+  .imgContainer {
+    padding-inline: 2rem;
+    padding-block: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    height: 80%;
+    background: rgb(45, 45, 45);
+    /* background: var(--gradient-black-tourmaline); */
+    background-size: 200%;
+    background-position: bottom;
+  }
+
+  .heroAction {
+    position: unset;
+    translate: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    gap: 2rem;
+    /* background-color: lightcoral; */
+  }
+  .actionText {
+    display: block;
+    color: whitesmoke;
+  }
+
+  .actionLogo {
+    font-size: 4rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    color: transparent;
+    background-image: var(--gradient-sunstone);
+    background-position: 200%;
+    background-clip: text;
+    animation: logo 5s infinite alternate;
+  }
+
+  .actionDesc {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 2rem;
+    word-spacing: 0.5rem;
+  }
+
+  .heroBtn {
+    /* color: black;
+    border-color: black; */
+    max-width: 10rem;
+    height: 3rem;
+  }
+
+  .imgContainer {
+    height: 100%;
+    /* width: 40%; */
+    background-color: whitesmoke;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+  }
+}
+
+@keyframes logo {
+  from {
+    background-position: left;
+  }
+
+  to {
+    background-position: right;
+  }
 }

@@ -10,10 +10,10 @@ export default function Header() {
       <div className={styles.navIcons}>
         {!isMenuOpen ? (
           <FiMenu
+            className={`${styles.navIcon}`}
             size="1.75rem"
             color="black"
-            // visibility={"hidden"}
-            className={styles.menuIcon}
+            cursor={"pointer"}
             onClick={() => {
               console.log("open");
               setIsMenuOpen(true);
@@ -21,9 +21,10 @@ export default function Header() {
           />
         ) : (
           <FiX
-            className={styles.closeIcon}
+            className={`${styles.navIcon}`}
             size="1.75rem"
             color="black"
+            cursor={"pointer"}
             onClick={() => setIsMenuOpen(false)}
           />
         )}
@@ -46,7 +47,7 @@ export default function Header() {
           Contact us
         </Link>
       </nav>
-      <FiShoppingBag size="1.75rem" color="black" />
+      <FiShoppingBag size="1.75rem" color="black" cursor={"pointer"} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import styles from "./Slider.module.css";
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 export default function Slider({ images }) {
   const [index, setIndex] = useState(0);
@@ -11,23 +12,22 @@ export default function Slider({ images }) {
   useEffect(() => {
     const sliderInterval = setInterval(() => {
       changeSlide();
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(sliderInterval);
     // return clearInterval(slideInterval);
   }, [index, images.length]);
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.imgContainer}>
-        {images.map((image, i) => (
-          <img
-            className={`${styles.sliderImg} ${i == index ? styles.active : ""}`}
-            src={image}
-            alt="slide of Pendants"
-          />
-        ))}
-      </div>
+    <div className={styles.imgContainer}>
+      {images.map((image, i) => (
+        <Image
+          src={image}
+          fill
+          className={`${styles.img} ${index == i ? styles.show : styles.hide}`}
+          style={{ objectFit: "cover", objectPosition: "bottom" }}
+        />
+      ))}
     </div>
   );
 }
