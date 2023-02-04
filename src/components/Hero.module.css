@@ -27,8 +27,10 @@
 .heroBtn {
   padding-block: 0.5rem;
   padding-inline: 1rem;
-  border: 1px solid white;
+  border: 1px solid black;
   outline-color: transparent;
+  color: black;
+  font-weight: bold;
 
   transition: all 0.1s linear;
 }
@@ -36,8 +38,8 @@
 .heroBtn:is(:hover, :active) {
   /* font-weight: bold; */
   /* background: black; */
-  color: black;
-  background: var(--gradient-sunstone);
+  color: white;
+  background: black;
   border: 1px solid black;
   /* border-radius: 0.5rem; */
 }
@@ -77,12 +79,13 @@
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     gap: 2rem;
-    padding: 2rem;
+    padding-block: 2rem;
+    padding-inline: 4rem;
     height: 80%;
-    background: rgb(45, 45, 45);
-    /* background: var(--gradient-black-tourmaline); */
+    background: whitesmoke;
+    /* background: var(--gradient-black-tourmaline); 
     background-size: 200%;
-    background-position: bottom;
+    background-position: bottom; */
   }
 
   .heroAction {
@@ -96,7 +99,7 @@
   }
   .actionText {
     display: block;
-    color: whitesmoke;
+    color: black;
   }
 
   .actionLogo {
@@ -104,7 +107,7 @@
     font-weight: bold;
     padding-bottom: 1rem;
     color: transparent;
-    background-image: var(--gradient-sunstone);
+    background-image: var(--gradient-black-tourmaline);
     background-position: 200%;
     background-clip: text;
     animation: logo 5s infinite alternate;
@@ -127,9 +130,9 @@
   .imgContainer {
     height: 100%;
     /* width: 40%; */
-    background-color: whitesmoke;
-    padding-block: 1rem;
-    padding-inline: 1rem;
+    background-color: black;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
   }
 }
 
