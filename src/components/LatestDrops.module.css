@@ -1,0 +1,36 @@
+.sectionContainer {
+  padding-block: 4rem;
+  padding-inline: 1rem;
+  height: auto;
+  min-width: 100vw;
+  width: 100vw;
+  background: var(--lab-bg);
+  display: flex;
+  flex-direction: column;
+  /* overflow-x: scroll; */
+}
+
+.sectionTitle {
+  color: black;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.25rem;
+  /* font-style: italic; */
+}
+
+.cardsContainer {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1rem;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  /* scroll-behavior: smooth; */
+  padding-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .cardsContainer {
+    /* justify-content: center; */
+    gap: 2rem;
+  }
+}

@@ -21,9 +21,7 @@
   --moonstone-bg-dark: linear-gradient(135deg, #1c1c1c, #0e0e0e),
     radial-gradient(at top left, circle, #1c1c1c, #0e0e0e, #080810),
     radial-gradient(at bottom right, circle, #1c1c1c, #080810, #0e0e0e),
-    radial-gradient(at center, circle, #1c1c1c, #080810, #0e0e0e, #1c1c1c),
-    radial-gradient(at top right, circle, #0e0e0e, #080810, #1c1c1c),
-    radial-gradient(at bottom left, circle, #0e0e0e, #1c1c1c, #080810);
+    radial-gradient(at center, circle, #1c1c1c, #080810, #0e0e0e, #1c1c1c);
 
   --amethyst-bg-3: linear-gradient(135deg, #f2f0f1, #e8e6e7),
     radial-gradient(at top left, circle, #f2f0f1, #e8e6e7, #c1c9d0),

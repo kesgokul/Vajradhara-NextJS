@@ -3,6 +3,9 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import LatestDrops from "@/components/LatestDrops";
+import Footer from "@/components/footer/Footer";
+
 import { Aboreto } from "@next/font/google";
 const aboreto = Aboreto({
   subsets: ["latin"],
@@ -22,6 +25,8 @@ export default function Home() {
       <main className={`${styles.main} ${aboreto.className}`}>
         <Header />
         <Hero />
+        <LatestDrops />
+        <Footer />
       </main>
     </>
   );

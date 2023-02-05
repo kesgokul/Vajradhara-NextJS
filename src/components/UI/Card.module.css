@@ -1,0 +1,20 @@
+.card {
+  margin-top: 0.5rem;
+  height: 20rem;
+  width: 16rem;
+  min-width: 15rem;
+
+  background: whitesmoke;
+  /* padding: 0.5rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    min-width: 20rem;
+    height: 25rem;
+  }
+}

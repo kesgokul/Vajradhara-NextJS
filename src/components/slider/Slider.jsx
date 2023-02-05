@@ -24,6 +24,8 @@ export default function Slider({ images }) {
         <Image
           src={image}
           fill
+          key={i}
+          alt="jewellery images"
           className={`${styles.img} ${index == i ? styles.show : styles.hide}`}
           style={{ objectFit: "cover", objectPosition: "bottom" }}
         />
