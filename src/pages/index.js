@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LatestDrops from "@/components/LatestDrops";
+import Categories from "@/components/Categories";
 import Footer from "@/components/footer/Footer";
 
 import { Aboreto } from "@next/font/google";
@@ -26,6 +27,7 @@ export default function Home() {
         <Header />
         <Hero />
         <LatestDrops />
+        <Categories />
         <Footer />
       </main>
     </>

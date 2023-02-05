@@ -18,15 +18,16 @@
   position: relative;
   overflow: hidden;
 }
-.card img {
+
+.productLink img {
   transition: scale 0.3s linear;
 }
 
-.card:hover img {
+.productLink:hover img {
   scale: 1.05;
 }
 
-.card:active img {
+.productLink:active img {
   scale: 1.05;
   /* styles for child when parent is active */
 }
