@@ -2,13 +2,14 @@ import styles from "./Hero.module.css";
 import Image from "next/image";
 import Slider from "./slider/Slider";
 import { Space_Grotesk } from "@next/font/google";
-const spaceGrotesk = Space_Grotesk({
+import { NextFont } from "@next/font";
+const spaceGrotesk: NextFont = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400"],
   fallback: ["sans-serif"],
 });
 
-const images = [
+const images: string[] = [
   "/bt-neck.png",
   "/lab-neck-1.png",
   "/m-neck.jpeg",

@@ -15,23 +15,25 @@
   color: black;
   font-weight: bold;
   border-bottom: 1px solid black;
-  padding-bottom: 0.25rem;
+  /* padding-bottom: 0.25rem; */
   /* font-style: italic; */
 }
 
 .cardsContainer {
+  padding-top: 2rem;
   display: flex;
   /* justify-content: center; */
   gap: 1rem;
   flex-flow: row nowrap;
   overflow-x: scroll;
+
   /* scroll-behavior: smooth; */
-  padding-top: 1rem;
 }
 
 @media (min-width: 1024px) {
   .cardsContainer {
     /* justify-content: center; */
     gap: 2rem;
+    height: auto;
   }
 }

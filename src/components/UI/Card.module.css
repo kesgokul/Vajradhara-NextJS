@@ -1,15 +1,16 @@
 .card {
-  margin-top: 0.5rem;
-  min-height: 20rem;
-  height: 20rem;
-  width: auto;
-  min-width: 15rem;
+  /* margin-top: 0.5rem; */
+  /* min-height: 20rem; */
+  height: 15rem;
+  width: 10rem;
+  /* min-width: 15rem; */
 
   background: whitesmoke;
   /* padding: 0.5rem; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  box-shadow: 2px 3px 8px 1px #a2a2a2;
   cursor: pointer;
 }
 

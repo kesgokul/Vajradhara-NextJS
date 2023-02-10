@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
+  /* margin-top: 4rem; */
   height: clamp(100vh, 120vh, auto);
 
   width: clamp(350px, 100vw, 1600px);

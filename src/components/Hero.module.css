@@ -89,6 +89,7 @@
     padding-block: 2rem;
     padding-inline: 4rem;
     height: 80vh;
+    /* min-height: 35rem; */
     background: var(--amethyst-bg-2);
     /* background: white; */
     /* background: var(--gradient-black-tourmaline); */

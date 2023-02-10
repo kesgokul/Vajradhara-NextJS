@@ -1,0 +1,40 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 2rem;
+  /* margin-top: 4rem; */
+  height: clamp(100vh, 120vh, auto);
+
+  width: clamp(350px, 100vw, 1600px);
+}
+
+.pageTitle {
+  margin-top: 5rem;
+  margin-right: auto;
+  padding-inline: 1rem;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: lightgreen;
+  display: flex;
+  justify-content: left;
+}
+
+.productsContainer {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 11rem);
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .productsContainer {
+    grid-template-columns: repeat(auto-fit, 22rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

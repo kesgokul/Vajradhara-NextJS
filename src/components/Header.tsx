@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
 import Link from "next/link";
 import { FiMenu, FiX, FiShoppingBag } from "react-icons/fi";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Header() {
       </div>
       <h1 className={styles.navLogo}>Vajradhara</h1>
       <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
-        <Link className={`${styles.navLink}`} href="/Pendants">
+        <Link className={`${styles.navLink}`} href="/Shop/Pendants">
           Pendants
         </Link>
         <Link className={`${styles.navLink}`} href="/Rings">
@@ -39,6 +39,9 @@ export default function Header() {
         </Link>
         <Link className={`${styles.navLink}`} href="/EarRings">
           Ear Rings
+        </Link>
+        <Link className={`${styles.navLink}`} href="/Shop/Bracelets">
+          Bracelets
         </Link>
         <Link className={`${styles.navLink}`} href="/contact">
           About Us

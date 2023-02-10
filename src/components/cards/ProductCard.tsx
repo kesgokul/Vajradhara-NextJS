@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 
 const price = 2800;
 
-function formatPrice(price) {
+function formatPrice(price: number) {
   return price.toLocaleString("en-IN", {
     style: "currency",
     currency: "INR",
@@ -26,6 +26,7 @@ export default function ProductCard() {
           <Image
             src={"/lab-pendant.png"}
             fill
+            alt="product image"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
         </div>
