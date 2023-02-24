@@ -2,7 +2,11 @@ import styles from "./Slider.module.css";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-export default function Slider({ images }) {
+interface PropTypes {
+  images: string[];
+}
+
+export default function Slider({ images }: PropTypes) {
   const [index, setIndex] = useState(0);
 
   const changeSlide = useCallback(() => {
@@ -20,14 +24,14 @@ export default function Slider({ images }) {
 
   return (
     <div className={styles.imgContainer}>
-      {images.map((image, i) => (
+      {images.map((image: string, i: number) => (
         <Image
           src={image}
           fill
           key={i}
           alt="jewellery images"
           className={`${styles.img} ${index == i ? styles.show : styles.hide}`}
-          style={{ objectFit: "cover", objectPosition: "bottom" }}
+          style={{ objectFit: "cover" }}
         />
       ))}
     </div>

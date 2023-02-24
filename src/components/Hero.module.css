@@ -3,7 +3,11 @@
   isolation: isolate;
   /* postion: unset; */
   margin-top: 4rem;
-  height: 60vh;
+  height: clamp(60vh, 70vh + 1rem, 80vh);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "hero";
+  /* justify-items: center; */
   width: 100%;
   /* padding: 1rem; */
 }
@@ -11,25 +15,39 @@
 /* ======================================================
           action
     ======================================================*/
+
 .heroAction {
-  position: absolute;
-  z-index: 1;
-  top: 10%;
-  left: 50%;
-  translate: -50%;
-  /* background: white; */
+  grid-area: hero;
+  margin-left: clamp(0.5rem, 1vw + 0.5rem, 2rem);
+  margin-top: 8rem;
 }
 
-.actionText {
-  display: none;
+.actionTag {
+  font-size: clamp(3rem, 4vw + 0.5rem, 4rem);
 }
+
+.tagSpan {
+  background-image: var(--gradient-orange-agate);
+  background-clip: text;
+  background-size: 200%;
+  color: transparent;
+  animation: logo 3s infinite alternate;
+}
+
+/* .actionText {
+  display: none;
+} */
 
 .heroBtn {
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
-  border: 1px solid black;
+  margin-top: 1rem;
+  padding-block: clamp(0.5rem, 1vw + 1rem, 0.85rem);
+  padding-inline: clamp(1rem, 2vw + 1rem, 2rem);
+  border: none;
   outline-color: transparent;
   color: black;
+  background-color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
   font-weight: bold;
 
   transition: all 0.1s linear;
@@ -40,7 +58,7 @@
   /* background: black; */
   color: white;
   background: black;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* border-radius: 0.5rem; */
 }
 
@@ -49,9 +67,11 @@
     ======================================================*/
 .imgContainer {
   /* position: relative; */
+  grid-area: hero;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  z-index: -1;
   /* padding: 2rem; */
 }
 
@@ -59,13 +79,13 @@
   filter: saturate(90%);
   scale: 1;
   transition: all 0.5s ease-in-out;
+  object-position: center;
 }
 
-.imgContainer img:hover {
+/* .imgContainer img:hover {
   filter: none;
   scale: 1.1;
-  /* border-radius: 1rem; */
-}
+} */
 
 .carouselContainer {
   height: 40%;
@@ -73,82 +93,38 @@
   background-color: lightcyan;
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .imgContainer {
     padding-inline: 2rem;
     padding-block: 1rem;
   }
-}
+} */
 
 @media (min-width: 1024px) {
   .hero {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 2rem;
-    padding-block: 2rem;
-    padding-inline: 4rem;
-    height: 80vh;
-    /* min-height: 35rem; */
-    background: var(--amethyst-bg-2);
-    /* background: white; */
-    /* background: var(--gradient-black-tourmaline); */
-    /* background-size: 200%;
-    background-position: bottom; */
+    grid-template-columns: 0.6fr 0.4fr;
+    background: whitesmoke;
   }
 
   .heroAction {
-    position: unset;
-    translate: 0;
+    grid-column: 1/2;
+  }
+  .imgContainer {
+    grid-column: 2/3;
+    background: var(--bg-sandal);
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    gap: 2rem;
-    width: 100%;
-    height: auto;
-    /* background-color: lightcoral; */
-  }
-  .actionText {
-    display: block;
-    color: black;
+    justify-content: center;
   }
 
-  .actionLogo {
-    font-size: 4rem;
-    font-weight: bold;
-    padding-bottom: 1rem;
+  .actionTag {
     color: transparent;
-    background-image: var(--gradient-black-tourmaline);
-    background-position: 200%;
+    background: var(--gradient-black-tourmaline);
     background-clip: text;
-    animation: logo 5s infinite alternate;
-  }
-
-  .actionDesc {
-    font-size: clamp(14px, 2vw, 16px);
-    /* font-size: 1.5rem; */
-    font-style: italic;
-    line-height: 1.75rem;
-    word-spacing: 0.5rem;
-    width: 80%;
   }
 
   .heroBtn {
-    /* color: black;
-    border-color: black; */
-    background: white;
-    max-width: 10rem;
-    height: 3rem;
-  }
-
-  .imgContainer {
-    height: 100%;
-    max-height: 30rem;
-    /* width: 40%; */
-    background-color: black;
-    padding-block: 1.5rem;
-    padding-inline: 1.5rem;
-    translate: -20% 20%;
+    border: 1px solid black;
   }
 }
 

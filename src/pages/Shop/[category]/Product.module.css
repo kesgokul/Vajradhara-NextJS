@@ -1,0 +1,16 @@
+.main {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
+  /* justify-content: space-between; */
+  /* height: 100%; */
+  /* align-content: center; */
+  /* gap: 10rem; */
+}
+
+.p {
+  margin-top: 4rem;
+  color: green;
+}

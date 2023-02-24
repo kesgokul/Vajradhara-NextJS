@@ -1,10 +1,13 @@
 import Head from "next/head";
-import styles from "./Shop.module.css";
+import styles from "../Shop.module.css";
 import Header from "@/components/Header";
 import Footer from "@/components/footer/Footer";
 import ProductCard from "@/components/cards/ProductCard";
+
 import { useRouter } from "next/router";
 import { Aboreto } from "@next/font/google";
+import { products } from "../../../../utils/fakeData";
+
 const aboreto = Aboreto({
   subsets: ["latin"],
   weight: ["400"],
@@ -22,23 +25,20 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <main className={`${styles.main} ${aboreto.className}`}>
-        <Header />
         <h1 className={styles.pageTitle}>{category}s</h1>
         <div className={styles.productsContainer}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {products.map((p, i) => {
+            return (
+              <div className={styles.product}>
+                <ProductCard key={i} {...p} />
+              </div>
+            );
+          })}
         </div>
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

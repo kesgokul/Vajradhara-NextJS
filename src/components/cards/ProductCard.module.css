@@ -1,15 +1,16 @@
 .card {
-  margin-top: 0.5rem;
-  height: 20rem;
-  width: 16rem;
-  min-width: 15rem;
+  /* width: clamp(10rem, 5vw + 2rem, 20rem); */
+  width: clamp(10rem, calc((100vw - 20rem) / 2), 20rem);
+  height: clamp(20rem, calc(5vw + 2rem), 25rem);
 
   background: whitesmoke;
-  /* padding: 0.5rem; */
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+  /* box-shadow: 2px 3px 8px 1px #a2a2a2; */
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .imgContainer {
@@ -33,12 +34,28 @@
 }
 
 .pDetails {
-  display: grid;
-  place-items: center;
+  /* display: grid; */
+  /* place-items: center; */
+  margin-left: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
   color: black;
+  font-size: clamp(0.75rem, 1vw + 0.125rem, 1rem);
 }
 
 .pName {
   font-weight: bold;
+  font-size: 1em;
   /* font-style: italic; */
+}
+
+.pDesc {
+  font-size: 0.55rem;
+  color: gray;
+}
+
+.pPrice {
+  margin-top: 0.5em;
+  font-size: 1.25em;
 }

@@ -1,11 +1,11 @@
 .sectionContainer {
   /* margin-top: 2rem; */
-  padding-block: 4rem;
+  padding-block: clamp(2rem, 4vw + 2rem, 10rem);
   padding-inline: 1rem;
   height: auto;
   min-width: 100vw;
   width: 100vw;
-  background: var(--lab-bg);
+  background: var(--amethyst-bg-2);
   display: flex;
   flex-direction: column;
   /* overflow-x: scroll; */
@@ -20,12 +20,16 @@
 }
 
 .cardsContainer {
-  padding-top: 2rem;
+  margin-top: 2rem;
+  padding-block: 2rem;
   display: flex;
   /* justify-content: center; */
-  gap: 1rem;
+  align-items: center;
+  gap: clamp(0rem, 0.25rem + 0.1vw, 3rem);
+  /* gap: 0.25rem; */
   flex-flow: row nowrap;
   overflow-x: scroll;
+  /* background-color: green; */
 
   /* scroll-behavior: smooth; */
 }

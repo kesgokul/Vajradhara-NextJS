@@ -1,12 +1,19 @@
 import styles from "./Header.module.css";
 import Link from "next/link";
-import { FiMenu, FiX, FiShoppingBag } from "react-icons/fi";
+import { FiMenu, FiX, FiShoppingBag, FiUser } from "react-icons/fi";
 import React, { useState } from "react";
+
+import { Aboreto } from "@next/font/google";
+const aboreto = Aboreto({
+  subsets: ["latin"],
+  weight: ["400"],
+  fallback: ["sans-serif"],
+});
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className={`${styles.header}`}>
+    <div className={`${styles.header} ${aboreto.className}`}>
       <div className={styles.navIcons}>
         {!isMenuOpen ? (
           <FiMenu
@@ -34,10 +41,10 @@ export default function Header() {
         <Link className={`${styles.navLink}`} href="/Shop/Pendants">
           Pendants
         </Link>
-        <Link className={`${styles.navLink}`} href="/Rings">
+        <Link className={`${styles.navLink}`} href="/Shop/Rings">
           Rings
         </Link>
-        <Link className={`${styles.navLink}`} href="/EarRings">
+        <Link className={`${styles.navLink}`} href="/Shop/EarRings">
           Ear Rings
         </Link>
         <Link className={`${styles.navLink}`} href="/Shop/Bracelets">
@@ -50,7 +57,10 @@ export default function Header() {
           Contact us
         </Link>
       </nav>
-      <FiShoppingBag size="1.75rem" color="black" cursor={"pointer"} />
+      <div className={styles.userIcons}>
+        <FiShoppingBag size="1.75rem" color="black" cursor={"pointer"} />
+        <FiUser size="1.75rem" color="black" cursor={"pointer"} />
+      </div>
     </div>
   );
 }

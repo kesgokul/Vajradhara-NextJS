@@ -2,12 +2,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  padding-bottom: 5rem;
+  /* align-content: center; */
   gap: 2rem;
   /* margin-top: 4rem; */
-  height: clamp(100vh, 120vh, auto);
+  /* height: clamp(100vh, 120vh, auto);
 
-  width: clamp(350px, 100vw, 1600px);
+  width: clamp(350px, 100vw, 1600px); */
 }
 
 .pageTitle {
@@ -26,9 +27,19 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 11rem);
+  margin-left: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    clamp(10rem, calc((100vw - 20rem) / 2), 20rem)
+  );
   justify-content: center;
-  row-gap: 2rem;
+  column-gap: clamp(0.125rem, 1vw + 0.5rem, 1rem);
+  row-gap: 1rem;
+  /* display: flex;
+  flex-flow: row wrap; */
+}
+.product {
+  flex: 1 0 auto;
 }
 
 @media (min-width: 1024px) {
