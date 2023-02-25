@@ -224,7 +224,7 @@ body {
   min-width: 350px;
   max-width: 100rem;
   height: auto;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 
 ul {

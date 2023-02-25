@@ -1,23 +1,14 @@
 .main {
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
   background: var(--amethyst-bg-2);
-  /* justify-content: space-between; */
-  /* height: 100%; */
-  /* align-content: center; */
-  /* gap: 10rem; */
 }
 
 .product {
   padding: 1rem;
   margin-top: 4rem;
   display: grid;
-}
-
-.images {
-  /* width: 100%; */
 }
 
 .featureImage {
