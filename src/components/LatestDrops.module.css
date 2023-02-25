@@ -3,8 +3,7 @@
   padding-block: clamp(2rem, 4vw + 2rem, 10rem);
   padding-inline: 1rem;
   height: auto;
-  min-width: 100vw;
-  width: 100vw;
+  width: 100%;
   background: var(--amethyst-bg-2);
   display: flex;
   flex-direction: column;

@@ -5,14 +5,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/footer/Footer";
 
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { products } from "utils/fakeData";
 import { formatPrice } from "utils/helper-functions";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { Aboreto } from "@next/font/google";
+const aboreto = Aboreto({
+  subsets: ["latin"],
+  weight: ["400"],
+  fallback: ["sans-serif"],
+});
 
 export default function Product() {
   const router = useRouter();
-  const { productId } = router.query;
 
-  const product = products[1];
+  const { productId } = router.query;
+  const product = products[0];
+
+  const [featureImg, setFeatureImg] = useState(product.image);
 
   return (
     <>
@@ -25,20 +35,52 @@ export default function Product() {
       <Header />
       <main className={styles.main}>
         <section className={styles.product}>
-          <figure>
-            <div className={styles.featureImage}>
+          <div className={styles.images}>
+            <figure className={styles.featureImage}>
+              <AiOutlineHeart
+                className={styles.favIcon}
+                size={"30px"}
+                color="white"
+              />
               <Image
-                src={product.image}
+                src={featureImg}
                 alt="image of the product"
                 fill
                 style={{ objectFit: "cover" }}
               />
+            </figure>
+            <div className={styles.otherImages}>
+              {product.images?.map((i, index) => {
+                return (
+                  <Image
+                    src={i}
+                    key={index}
+                    alt="other image of the product"
+                    width={80}
+                    height={80}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setFeatureImg(i)}
+                  />
+                );
+              })}
             </div>
-          </figure>
+          </div>
           <aside className={styles.productDetails}>
-            <h1>{product.name}</h1>
-            <p>{product.desc}</p>
-            <p>{formatPrice(product.price)}</p>
+            <h1 className={`${aboreto.className} ${styles.pName}`}>
+              {product.name}
+            </h1>
+            <p className={styles.pDesc}>
+              {`${product.desc}`} Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Fugiat omnis laboriosam ullam quibusdam maxime
+              amet officia sunt, repellendus totam error?
+            </p>
+            <p className={styles.pPrice}>{formatPrice(product.price)}</p>
+            <div className={styles.buttons}>
+              <button className={`${styles.btnCart} ${styles.btnCart2}`}>
+                Add to Cart
+              </button>
+              <button className={styles.btnCart}>Buy Now</button>
+            </div>
           </aside>
         </section>
       </main>

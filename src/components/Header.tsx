@@ -36,7 +36,10 @@ export default function Header() {
           />
         )}
       </div>
-      <h1 className={styles.navLogo}>Vajradhara</h1>
+      <Link href={"/"}>
+        <h1 className={styles.navLogo}>Vajradhara</h1>
+      </Link>
+
       <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
         <Link className={`${styles.navLink}`} href="/Shop/Pendants">
           Pendants

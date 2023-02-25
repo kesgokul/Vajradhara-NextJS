@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   /* postion: unset; */
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   height: clamp(60vh, 70vh + 1rem, 80vh);
   display: grid;
   grid-template-columns: 1fr;

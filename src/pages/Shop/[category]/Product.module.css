@@ -1,16 +1,117 @@
 .main {
-  height: 100vh;
-  position: relative;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
+  background: var(--amethyst-bg-2);
   /* justify-content: space-between; */
   /* height: 100%; */
   /* align-content: center; */
   /* gap: 10rem; */
 }
 
-.p {
+.product {
+  padding: 1rem;
   margin-top: 4rem;
-  color: green;
+  display: grid;
+}
+
+.images {
+  /* width: 100%; */
+}
+
+.featureImage {
+  position: relative;
+  isolation: isolate;
+  background-color: white;
+  width: 100%;
+  height: clamp(50vh, calc(50vh + 10rem), 80vh);
+}
+.favIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  z-index: 2;
+}
+
+.otherImages {
+  margin-block: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  /* border: 2px solid whitesmoke; */
+}
+
+.productDetails {
+  margin-top: 1rem;
+  color: black;
+  /* width: 100%; */
+  font-size: clamp(1rem, 1vw + 1rem, 2rem);
+}
+
+.pName {
+  font-weight: bold;
+  font-size: 2em;
+  /* font-style: italic; */
+}
+
+.pDesc {
+  /* width: 50%; */
+  margin-top: 0.5em;
+  font-size: 0.55em;
+  color: gray;
+}
+
+.pPrice {
+  margin-top: 2rem;
+  font-size: 1.25em;
+}
+.buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btnCart {
+  width: min(100%, 25rem);
+  padding-block: 1rem;
+  background: black;
+  border: 2px solid black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btnCart2 {
+  background: white;
+  color: black;
+}
+
+.btnCart:is(:hover, :focus) {
+  outline: transparent;
+  background: rgb(41, 41, 41);
+  /* color: black; */
+}
+.btnCart2:is(:hover, :focus) {
+  outline: transparent;
+  background: rgb(234, 234, 234);
+  /* color: black; */
+}
+
+@media (min-width: 1024px) {
+  .product {
+    grid-template-columns: 0.6fr 0.4fr;
+    /* column-gap: 1rem; */
+  }
+
+  .productDetails {
+    margin: 0rem 0 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .btnCart {
+    width: 20rem;
+  }
 }

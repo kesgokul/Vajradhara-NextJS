@@ -1,14 +1,15 @@
 export const products = [
   {
     id: "1",
-    name: "labradorite Pendant",
+    name: "Wildfire",
     price: 2800,
     image: "/lab-pendant.png",
+    images: ["/lab-pendant.png", "/am-pendant.png", "/m-neck.jpeg"],
     desc: "Blue labradorite pendant wrapped in oxidised copper wire",
   },
   {
     id: "1",
-    name: "labradorite Pendant",
+    name: "Aurora",
     price: 2800,
     image: "/lab-pendant.png",
     desc: "Blue labradorite pendant wrapped in oxidised copper wire",
