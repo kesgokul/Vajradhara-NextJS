@@ -9,6 +9,11 @@
   width: clamp(350px, 100vw, 1600px); */
 }
 
+.page {
+  filter: blur(100);
+  display: none;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/footer/Footer";
+import UPI from "@/components/Icons/UPI";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -80,6 +81,27 @@ export default function Product() {
                 Add to Cart
               </button>
               <button className={styles.btnCart}>Buy Now</button>
+            </div>
+            <div className={styles.extras}>
+              <article className={styles.extraCard}>
+                <h3 className={styles.extraTitle}>Shipping & Returns</h3>
+                <p>
+                  We offer free shipping within India via Bluedart or Delhivery
+                  courier service. All orders are shipped via express air
+                  shipping only. Delivery time may vary from 2-5 days depending
+                  on location.
+                </p>
+              </article>
+              <article className={styles.extraCard}>
+                <h3 className={styles.extraTitle}>Payment Options</h3>
+                <p>
+                  We offer free shipping within India via Bluedart or Delhivery
+                  courier service. All orders are shipped via express air
+                  shipping only. Delivery time may vary from 2-5 days depending
+                  on location.
+                </p>
+                <UPI className={styles.icons} />
+              </article>
             </div>
           </aside>
         </section>
