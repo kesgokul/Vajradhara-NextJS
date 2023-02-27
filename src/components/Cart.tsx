@@ -4,7 +4,7 @@ import CartItemCard from "./cards/CartItemCard";
 import { UserContext, CartItem } from "@/context/userContext";
 import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { formatPrice } from "utils/helper-functions";
+import { getTotalAmount } from "utils/helper-functions";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { GiBeveledStar } from "react-icons/gi";
@@ -20,9 +20,6 @@ export default function Cart() {
   const { setIsCartVisible, cartItems } = useContext(UserContext);
 
   // function to get the total cart value
-  function getTotalAmount(): string {
-    return formatPrice(cartItems.reduce((acc, item) => (acc += item.price), 0));
-  }
 
   return (
     <motion.main
@@ -60,14 +57,19 @@ export default function Cart() {
         })}
       </section>
       {cartItems.length >= 1 && (
-        <Link className={`${styles.checkout} ${aboreto.className}`} href={"/"}>
+        <Link
+          className={`${styles.checkout} ${aboreto.className}`}
+          href={"/Checkout"}
+        >
           Check out
           <GiBeveledStar
             className={styles.checkoutStar}
             size={"20px"}
             color="white"
           />
-          <span className={styles.totalAmount}>{`${getTotalAmount()}`}</span>
+          <span className={styles.totalAmount}>{`${getTotalAmount(
+            cartItems
+          )}`}</span>
         </Link>
       )}
     </motion.main>

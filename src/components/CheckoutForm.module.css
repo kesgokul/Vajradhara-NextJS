@@ -1,0 +1,63 @@
+.formContainer {
+  width: 100%;
+  padding-bottom: 2rem;
+  /* display: grid;
+  place-items: center; */
+}
+
+.login {
+  padding: 1rem 0 0.5rem 0;
+  font-style: italic;
+}
+
+.login a {
+  padding-left: 0.25rem;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.field {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s linear;
+}
+
+.error {
+  padding: 0.25rem 0 0 0.5rem;
+  font-size: 0.65rem;
+  color: rgb(245, 108, 108);
+  /* display: none; */
+}
+.statePlaceholder {
+  color: gray;
+}
+.shippingInfo {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btnSubmit {
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  width: 80%;
+  padding: 1rem 0;
+  background: black;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: white;
+  /* border-radius: 2rem;s */
+}
+
+.btnSubmit:hover {
+  /* background: green; */
+  scale: 1.1;
+}

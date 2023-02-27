@@ -1,0 +1,124 @@
+.main {
+  color: rgb(72, 72, 72);
+  background: var(--amethyst-bg);
+}
+
+.container {
+  display: grid;
+  gap: 2rem;
+  /* padding-inline: clamp(0.1rem, 2vw + 1rem, 3rem); */
+  /* justify-content: center; */
+}
+
+.logoContainer {
+  display: grid;
+  width: 100%;
+  padding: 4rem 0;
+  background: black;
+}
+
+.navLogo {
+  margin: 0 auto;
+  height: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+  color: transparent;
+  background-image: var(--gradient-charoite);
+  background-clip: text;
+  background-size: 200%;
+  display: flex;
+  align-items: center;
+  animation: logo 3s infinite alternate;
+}
+
+.sectionTitle {
+  display: flex;
+  font-size: 0.75rem;
+  padding-block: 1rem;
+  border-block: 2px solid rgb(216, 215, 215);
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.total {
+  width: 100%;
+  padding: 1rem 0;
+  /* background: black; */
+  /* color: white; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary {
+  margin: 0 auto 2rem auto;
+  padding-inline: 0.5rem;
+  max-width: 35rem;
+  width: 100%;
+  background: var(--bg-sandal);
+
+  /* height: 20rem; */
+  /* display: none; */
+}
+
+.itemsContainer {
+  padding-top: 1rem;
+  width: 100%;
+  background: var(--bg-sandal);
+  display: none;
+  /* bottom: 0; */
+  /* transform: translateY(-10rem); */
+  translate: 0 -100%;
+  z-index: -1;
+  transition: all 0.2s linear;
+}
+
+.active {
+  /* translate: 0; */
+  display: unset;
+}
+
+.totalAmount {
+  margin-left: auto;
+  font-size: 1.1rem;
+}
+
+.info {
+  padding-inline: 0.5rem;
+  max-width: 35rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 0.6fr 0.4fr;
+    justify-content: center;
+  }
+  .itemsContainer {
+    position: unset;
+    translate: 0;
+  }
+
+  .summary {
+    grid-column: 2/3;
+  }
+  .sectionTitle {
+    display: none;
+  }
+
+  .info {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    margin: 0 auto;
+  }
+}
+
+@keyframes logo {
+  from {
+    background-position: left;
+  }
+
+  to {
+    background-position: right;
+  }
+}

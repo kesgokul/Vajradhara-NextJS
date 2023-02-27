@@ -32,7 +32,6 @@ export default function ProductCard({
   const router = useRouter();
   const path = router.pathname;
   const { category } = router.query;
-  console.log(category);
   return (
     <Link
       className={styles.productLink}

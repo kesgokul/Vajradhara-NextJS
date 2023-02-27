@@ -14,7 +14,7 @@ const aboreto = Aboreto({
   fallback: ["sans-serif"],
 });
 
-export default function Pendants() {
+export default function Home() {
   return (
     <>
       <Head>
