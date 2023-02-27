@@ -24,6 +24,7 @@
     /* width: 80%; */
     height: 80%;
     translate: -40% 0;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(150, 149, 149);
   }
 }
 

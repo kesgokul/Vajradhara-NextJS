@@ -16,7 +16,7 @@ export default function Slider({ images }: PropTypes) {
   useEffect(() => {
     const sliderInterval = setInterval(() => {
       changeSlide();
-    }, 7000);
+    }, 3000);
 
     return () => clearInterval(sliderInterval);
     // return clearInterval(slideInterval);

@@ -9,7 +9,7 @@ import {
 } from "react";
 
 //====================================== TYPES =================================
-interface CartItem {
+export interface CartItem {
   productId: string;
   name: string;
   image: string;
@@ -29,7 +29,7 @@ interface UserContextProps {
 
 //====================================================== CONTEXT ==============================================
 
-const UserContext = createContext<UserContextProps>({
+export const UserContext = createContext<UserContextProps>({
   isCartVisible: false,
   setIsCartVisible: () => {},
   cartItems: [],

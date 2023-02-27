@@ -104,10 +104,10 @@
 
   white-space: nowrap;
 }
-.footerLink:hover {
-  color: transparent;
-  background-image: var(--gradient-charoite);
-  background-clip: text;
+.footerLink:is(:hover, :focus) {
+  color: black;
+  /* background-image: var(--gradient-charoite); */
+  /* background-clip: text; */
 }
 
 .footerLink::after {
@@ -124,7 +124,7 @@
 }
 .footerLink:is(:hover, :focus, :active)::after {
   /* color: var(--gradient-amethyst-light); */
-  width: 50%;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {

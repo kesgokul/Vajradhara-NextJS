@@ -1,0 +1,13 @@
+.btnCart {
+  width: min(100%, 25rem);
+  padding-block: 1rem;
+  background: black;
+  border: 2px solid black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btnCart2 {
+  background: white;
+  color: black;
+}

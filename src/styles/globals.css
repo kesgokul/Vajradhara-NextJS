@@ -57,7 +57,7 @@
     radial-gradient(at center, circle, #faf7f8, #c7d6e1, #f2ecec, #faf7f8),
     radial-gradient(at top right, circle, #f2ecec, #c7d6e1, #faf7f8);
 
-  --gradient-copper-brass: linear-gradient(to right, #b87333, #bfbfbf);
+  --gradient-copper-brass: linear-gradient(to top right, #b87333, #bfbfbf);
 
   --gradient-clear-quartz: linear-gradient(
     to right,
@@ -69,7 +69,7 @@
   );
 
   --gradient-charoite: linear-gradient(
-    to right,
+    to bottom right,
     #3f0080,
     #471499,
     #4d2dcc,
@@ -95,7 +95,7 @@
   );
 
   --gradient-rainbow-fluorite: linear-gradient(
-    to right,
+    to bottom right,
     #86b8ff,
     #7de2ff,
     #70ffb3,

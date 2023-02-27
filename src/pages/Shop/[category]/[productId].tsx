@@ -4,11 +4,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/footer/Footer";
 import UPI from "@/components/Icons/UPI";
+import AddToCartBtn from "@/components/buttons/AddToCartBtn";
+import BuyNowBtn from "@/components/buttons/BuyNowBtn";
 
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { products } from "utils/fakeData";
 import { formatPrice } from "utils/helper-functions";
+import { UserContext, CartItem } from "@/context/userContext";
+import { motion } from "framer-motion";
+
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Aboreto } from "@next/font/google";
 const aboreto = Aboreto({
@@ -18,12 +23,41 @@ const aboreto = Aboreto({
 });
 
 export default function Product() {
+  const [inCart, setInCart] = useState<boolean>(false);
+  const { setCartItems, cartItems } = useContext(UserContext);
   const router = useRouter();
 
   const { productId } = router.query;
   const product = products[0];
 
   const [featureImg, setFeatureImg] = useState(product.image);
+
+  function handleAddToCart() {
+    setCartItems((s) => [
+      ...s,
+      {
+        productId: product.id,
+        name: product.name,
+        image: product.image,
+        price: product.price,
+      },
+    ]);
+  }
+
+  function handleBuyNow() {
+    handleAddToCart();
+
+    //navigate to the checkout page
+  }
+
+  useEffect(() => {
+    const item = cartItems.findIndex((item) => item.productId === product.id);
+    if (item == -1) {
+      setInCart(false);
+    } else {
+      setInCart(true);
+    }
+  }, [cartItems]);
 
   return (
     <>
@@ -77,10 +111,8 @@ export default function Product() {
             </p>
             <p className={styles.pPrice}>{formatPrice(product.price)}</p>
             <div className={styles.buttons}>
-              <button className={`${styles.btnCart} ${styles.btnCart2}`}>
-                Add to Cart
-              </button>
-              <button className={styles.btnCart}>Buy Now</button>
+              <AddToCartBtn inCart={inCart} onAdd={handleAddToCart} />
+              <BuyNowBtn onBuy={handleBuyNow} />
             </div>
             <div className={styles.extras}>
               <article className={styles.extraCard}>
@@ -100,7 +132,7 @@ export default function Product() {
                   shipping only. Delivery time may vary from 2-5 days depending
                   on location.
                 </p>
-                <UPI className={styles.icons} />
+                <UPI />
               </article>
             </div>
           </aside>

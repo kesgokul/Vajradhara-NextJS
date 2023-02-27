@@ -16,7 +16,7 @@
   isolation: isolate;
   background-color: white;
   width: 100%;
-  height: clamp(50vh, calc(50vh + 10rem), 80vh);
+  height: clamp(50vh, calc(50vmax + 20rem), 30rem);
 }
 .favIcon {
   position: absolute;
