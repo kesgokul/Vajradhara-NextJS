@@ -50,12 +50,12 @@
   margin-top: auto;
   /* width: 100%; */
   padding: 2rem 2rem;
-  background: var(--gradient-black-tourmaline);
+  background: rgb(37, 37, 37);
   background-size: 300%;
   color: white;
   font-weight: bold;
   /* font-family: sans-serifs; */
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.15ch;
   display: flex;
@@ -63,11 +63,11 @@
   align-items: center;
   gap: 1rem;
   /* border-block: 4px solid white; */
-  animation: logo 2s infinite alternate;
+  /* animation: logo 2s infinite alternate; */
 }
 
 .checkout:is(:hover, :focus) {
-  animation: none;
+  background: black;
 }
 .checkout:is(:hover, :focus) .checkoutStar {
   animation: star 1s forwards;

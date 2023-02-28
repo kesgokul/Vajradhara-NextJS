@@ -1,6 +1,6 @@
 .cartItem {
-  padding: 0.5rem;
-  border-bottom: 1px solid rgb(62, 62, 62);
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid rgb(193, 192, 192);
   color: rgb(62, 62, 62);
   display: grid;
   grid-template-columns: 110px 1fr auto;

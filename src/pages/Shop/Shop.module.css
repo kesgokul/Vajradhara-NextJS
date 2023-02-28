@@ -38,11 +38,3 @@
 .product {
   flex: 1 0 auto;
 }
-
-@media (min-width: 1024px) {
-  .productsContainer {
-    grid-template-columns: repeat(auto-fit, 22rem);
-    margin-left: auto;
-    margin-right: auto;
-  }
-}

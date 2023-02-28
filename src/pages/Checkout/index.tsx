@@ -9,6 +9,7 @@ import CheckoutForm from "@/components/CheckoutForm";
 import { useContext, useState } from "react";
 import { UserContext } from "@/context/userContext";
 import { getTotalAmount } from "utils/helper-functions";
+import { motion } from "framer-motion";
 
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import { Aboreto, Roboto } from "@next/font/google";
@@ -24,7 +25,7 @@ const roboto = Roboto({
 });
 
 export default function Checkout() {
-  const [showSummary, setShowSummary] = useState<boolean>(false);
+  const [showSummary, setShowSummary] = useState<boolean>(true);
   const { cartItems } = useContext(UserContext);
 
   return (
@@ -44,7 +45,7 @@ export default function Checkout() {
           </Link>
         </div>
         <div className={styles.container}>
-          <section className={styles.summary}>
+          <motion.section className={styles.summary}>
             <div className={styles.sectionTitle}>
               <h3>Order Summary</h3>
               {!showSummary && (
@@ -65,7 +66,8 @@ export default function Checkout() {
               )}
               <p className={styles.totalAmount}>{getTotalAmount(cartItems)}</p>
             </div>
-            <div
+            <motion.div
+              layout
               className={`${styles.itemsContainer} ${
                 showSummary ? styles.active : ""
               }`}
@@ -86,8 +88,8 @@ export default function Checkout() {
                   {getTotalAmount(cartItems)}
                 </p>
               </div>
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
           <section className={styles.info}>
             <CheckoutForm />
           </section>
