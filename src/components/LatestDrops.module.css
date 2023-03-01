@@ -28,9 +28,15 @@
   /* gap: 0.25rem; */
   flex-flow: row nowrap;
   overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   /* background-color: green; */
 
   /* scroll-behavior: smooth; */
+}
+
+.card {
+  scroll-snap-align: start;
 }
 
 @media (min-width: 1024px) {

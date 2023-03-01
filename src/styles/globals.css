@@ -225,6 +225,7 @@ body {
   max-width: 100rem;
   height: auto;
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 ul {

@@ -21,6 +21,7 @@ export default function LatestDrops() {
           products.map((p, i) => {
             return (
               <motion.div
+               className={styles.card}
                 initial={{ x: "90vw" }}
                 animate={{ x: 0 }}
                 transition={{
