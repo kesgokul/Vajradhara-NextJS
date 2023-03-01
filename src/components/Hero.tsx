@@ -1,11 +1,16 @@
 import styles from "./Hero.module.css";
 import Image from "next/image";
 import Slider from "./slider/Slider";
-import { Space_Grotesk } from "@next/font/google";
+import { Space_Grotesk, Dancing_Script } from "@next/font/google";
 import { NextFont } from "@next/font";
 import { motion } from "framer-motion";
 
 const spaceGrotesk: NextFont = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400"],
+  fallback: ["sans-serif"],
+});
+const dancingScript: NextFont = Dancing_Script({
   subsets: ["latin"],
   weight: ["400"],
   fallback: ["sans-serif"],
@@ -29,9 +34,13 @@ export default function Hero() {
       >
         <div className={styles.actionText}>
           <h1 className={styles.actionTag}>
-            Unleash your <br />
-            inner <br />
-            <span className={styles.tagSpan}>Sparkle</span>
+            Unleash
+            <span className={styles.tagItalic}>
+              your <br />
+              inner
+            </span>
+            <br />
+            <span className={styles.tagSparkle}>Sparkle</span>
           </h1>
         </div>
         <button className={styles.heroBtn}>visit shop</button>

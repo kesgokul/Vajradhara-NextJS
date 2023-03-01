@@ -29,8 +29,9 @@ export default function LatestDrops() {
                   bounce: 0.1,
                   velocity: 1,
                 }}
+                key={i}
               >
-                <ProductCard key={i} {...p} />
+                <ProductCard {...p} />
               </motion.div>
             );
           })}

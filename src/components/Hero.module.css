@@ -26,7 +26,12 @@
   font-size: clamp(3rem, 4vw + 0.5rem, 4rem);
 }
 
-.tagSpan {
+.tagItalic {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.tagSparkle {
   background-image: var(--gradient-orange-agate);
   background-clip: text;
   background-size: 200%;

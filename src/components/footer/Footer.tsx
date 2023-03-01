@@ -9,7 +9,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <form className={styles.email} action="">
         <label className={styles.sectionTitle} htmlFor="email">
-          Subscribe to our newsletter
+          Subscribe to our newsletter for {""}
+          <span style={{ fontStyle: "normal", textTransform: "uppercase" }}>
+            exclusive offers
+          </span>
         </label>
         <div className={styles.emailField}>
           <input
@@ -29,25 +32,7 @@ export default function Footer() {
           </button>
         </div>
       </form>
-      <article className={styles.socials}>
-        <p className={styles.sectionTitle}>Connect</p>
-        <ul className={styles.socialsList}>
-          <a className={styles.socialListItem}>
-            <FiFacebook size={"1.5rem"} color="black" cursor={"pointer"} />
-            <p className={`${styles.footerLink} ${styles.socialName}`}>
-              Facebook
-            </p>
-          </a>
-          <a className={styles.socialListItem}>
-            <FiInstagram size={"1.5rem"} color="black" cursor={"pointer"} />
-            <p className={`${styles.footerLink} ${styles.socialName}`}>
-              Instagram
-            </p>
-          </a>
-        </ul>
-      </article>
       <article className={styles.help}>
-        <p className={styles.sectionTitle}>Help</p>
         <ul className={styles.helpList}>
           <li key={"faq"}>
             <Link className={styles.footerLink} href="/Faq">
@@ -79,6 +64,16 @@ export default function Footer() {
               Privacy policy
             </Link>
           </li>
+        </ul>
+      </article>
+      <article className={styles.socials}>
+        <ul className={styles.socialsList}>
+          <a className={styles.socialListItem}>
+            <FiFacebook size={"1.5rem"} color="#323232" cursor={"pointer"} />
+          </a>
+          <a className={styles.socialListItem}>
+            <FiInstagram size={"1.5rem"} color="#323232" cursor={"pointer"} />
+          </a>
         </ul>
       </article>
       <div className={styles.copyright}>copyright Vajradhara LLC 2023</div>
