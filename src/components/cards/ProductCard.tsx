@@ -18,14 +18,14 @@ interface PageProps {
   id: string;
   name: string;
   price: number;
-  image: string;
+  images: string[];
   desc: string;
 }
 
 export default function ProductCard({
   name,
   price,
-  image,
+  images,
   desc,
   id: productId,
 }: PageProps) {
@@ -40,7 +40,7 @@ export default function ProductCard({
       <div className={styles.card}>
         <div className={styles.imgContainer}>
           <Image
-            src={image}
+            src={images[0]}
             fill
             alt="product image"
             style={{ objectFit: "cover", objectPosition: "center" }}

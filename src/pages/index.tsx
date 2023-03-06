@@ -7,6 +7,10 @@ import LatestDrops from "@/components/LatestDrops";
 import Categories from "@/components/Categories";
 import Footer from "@/components/footer/Footer";
 
+import ConnectDB from "@/db/connect";
+import Product from "../db/model";
+import { ProductInterface } from "@/lib/interfaces";
+
 import { Aboreto } from "@next/font/google";
 const aboreto = Aboreto({
   subsets: ["latin"],
@@ -14,7 +18,11 @@ const aboreto = Aboreto({
   fallback: ["sans-serif"],
 });
 
-export default function Home() {
+interface PageProps {
+  latestProducts: ProductInterface[];
+}
+
+export default function Home({ latestProducts }: PageProps) {
   return (
     <>
       <Head>
@@ -26,10 +34,36 @@ export default function Home() {
       <Header />
       <main className={`${styles.main} ${aboreto.className}`}>
         <Hero />
-        <LatestDrops />
+        <LatestDrops products={latestProducts} />
         <Categories />
       </main>
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    await ConnectDB(process.env.MONGODB_URI);
+    const products = await Product.find({}).limit(10);
+    const latestProducts = products.map((p) => {
+      return {
+        id: p._id.toString(),
+        name: p.name,
+        desc: p.desc,
+        price: p.price,
+        images: p.images,
+        available: p.available,
+      };
+    });
+    console.log(latestProducts);
+
+    return {
+      props: {
+        latestProducts: latestProducts,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 }
