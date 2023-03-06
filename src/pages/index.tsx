@@ -56,7 +56,7 @@ export async function getStaticProps() {
         available: p.available,
       };
     });
-    console.log(latestProducts);
+    // console.log(latestProducts);
 
     return {
       props: {

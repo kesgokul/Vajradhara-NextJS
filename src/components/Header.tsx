@@ -3,7 +3,7 @@ import Link from "next/link";
 import Cart from "./Cart";
 
 import React, { useState, useContext } from "react";
-import { UserContext } from "@/context/userContext";
+import { UserContext } from "@/context/UserContext";
 import { AnimatePresence } from "framer-motion";
 
 import { FiMenu, FiX, FiShoppingBag, FiUser } from "react-icons/fi";

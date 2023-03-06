@@ -7,7 +7,7 @@ import Link from "next/link";
 import CheckoutForm from "@/components/CheckoutForm";
 
 import { useContext, useState } from "react";
-import { UserContext } from "@/context/userContext";
+import { UserContext } from "@/context/UserContext";
 import { getTotalAmount } from "utils/helper-functions";
 import { motion } from "framer-motion";
 
@@ -75,6 +75,7 @@ export default function Checkout() {
               {cartItems.map((item) => {
                 return (
                   <CartItemCard
+                    key={item.productId}
                     name={item.name}
                     image={item.image}
                     price={item.price}

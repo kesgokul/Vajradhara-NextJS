@@ -1,4 +1,4 @@
-import { CartItem } from "@/context/userContext";
+import { CartItem } from "@/context/UserContext";
 
 export function formatPrice(price: number) {
   return price.toLocaleString("en-IN", {

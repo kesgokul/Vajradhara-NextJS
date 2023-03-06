@@ -2,7 +2,7 @@ import styles from "./CartItemCard.module.css";
 import Image from "next/image";
 
 import { formatPrice } from "utils/helper-functions";
-import { UserContext } from "@/context/userContext";
+import { UserContext } from "@/context/UserContext";
 import { useContext } from "react";
 
 import { MdDelete, MdDeleteOutline } from "react-icons/md";

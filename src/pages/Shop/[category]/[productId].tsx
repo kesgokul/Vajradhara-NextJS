@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { useState, useContext, useEffect } from "react";
 import { products } from "utils/fakeData";
 import { formatPrice } from "utils/helper-functions";
-import { UserContext, CartItem } from "@/context/userContext";
+import { UserContext, CartItem } from "@/context/UserContext";
 import { motion } from "framer-motion";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";

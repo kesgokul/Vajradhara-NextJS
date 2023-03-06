@@ -31,8 +31,8 @@ export default function Home() {
         <div className={styles.productsContainer}>
           {products.map((p, i) => {
             return (
-              <div className={styles.product}>
-                <ProductCard key={i} {...p} />
+              <div key={i} className={styles.product}>
+                <ProductCard {...p} images={["mt-neck.jpeg"]} />
               </div>
             );
           })}

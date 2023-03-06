@@ -1,7 +1,7 @@
 import styles from "./Cart.module.css";
 import CartItemCard from "./cards/CartItemCard";
 
-import { UserContext, CartItem } from "@/context/userContext";
+import { UserContext, CartItem } from "@/context/UserContext";
 import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getTotalAmount } from "utils/helper-functions";
