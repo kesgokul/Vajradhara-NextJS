@@ -1,7 +1,7 @@
 import styles from "./LatestDrops.module.css";
 import ProductCard from "./cards/ProductCard";
 import { useInView } from "react-intersection-observer";
-import { useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { ProductInterface } from "@/lib/interfaces";
@@ -13,6 +13,8 @@ interface PageProps {
 }
 
 export default function LatestDrops({ products }: PageProps) {
+  const [animateComplete, setAnimationComplete] = useState<boolean>(false);
+
   const { ref, inView } = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -28,15 +30,19 @@ export default function LatestDrops({ products }: PageProps) {
             products.map((p, i) => {
               return (
                 <motion.div
-                  className={styles.card}
+                  className={`${styles.card} ${
+                    animateComplete && styles.scrollSnap
+                  }`}
                   initial={{ x: "90vw" }}
                   animate={{ x: 0 }}
                   transition={{
                     delay: delay + delay * i,
                     type: "spring",
-                    bounce: 0.1,
-                    velocity: 1,
+                    bounce: 0,
+                    velocity: 0.5,
                   }}
+                  onAnimationComplete={() => setAnimationComplete(true)}
+                  onAnimationStart={() => setAnimationComplete(false)}
                   key={i}
                 >
                   <ProductCard {...p} />

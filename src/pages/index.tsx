@@ -12,6 +12,7 @@ import Product from "../db/model";
 import { ProductInterface } from "@/lib/interfaces";
 
 import { Aboreto } from "@next/font/google";
+import { GetStaticProps } from "next";
 const aboreto = Aboreto({
   subsets: ["latin"],
   weight: ["400"],
@@ -42,20 +43,31 @@ export default function Home({ latestProducts }: PageProps) {
   );
 }
 
-export async function getStaticProps() {
+interface Props {
+  props: ProductInterface[];
+}
+
+export const getStaticProps: GetStaticProps = async () => {
   try {
     await ConnectDB(process.env.MONGODB_URI);
     const products = await Product.find({}).limit(10);
-    const latestProducts = products.map((p) => {
-      return {
-        id: p._id.toString(),
-        name: p.name,
-        desc: p.desc,
-        price: p.price,
-        images: p.images,
-        available: p.available,
-      };
-    });
+    let latestProducts: ProductInterface[];
+
+    // check if there any products, restructure and return them as props
+    if (products) {
+      latestProducts = products.map((p) => {
+        return {
+          id: p._id.toString(),
+          name: p.name,
+          desc: p.desc,
+          price: p.price,
+          images: p.images,
+          available: p.available,
+        };
+      }) as ProductInterface[];
+    } else {
+      latestProducts = [];
+    }
     // console.log(latestProducts);
 
     return {
@@ -64,6 +76,12 @@ export async function getStaticProps() {
       },
     };
   } catch (error) {
+    let empty: ProductInterface[] = [];
     console.log(error);
+
+    // returning and empty arry to maintain
+    return {
+      props: { latestProducts: empty },
+    };
   }
-}
+};
