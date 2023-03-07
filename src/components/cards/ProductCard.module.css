@@ -1,7 +1,7 @@
 .card {
   /* width: clamp(10rem, 5vw + 2rem, 20rem); */
   width: clamp(10rem, calc((100vw - 20rem) / 2), 20rem);
-  height: clamp(20rem, calc(5vw + 2rem), 25rem);
+  height: clamp(20rem, calc((100vw - 20rem) / 2), 25rem);
 
   background: whitesmoke;
   padding-bottom: 1rem;
@@ -21,7 +21,7 @@
 }
 
 .productLink img {
-  transition: scale 0.3s linear;
+  transition: scale 0.25s linear;
 }
 
 .productLink:hover img {
@@ -51,8 +51,15 @@
 }
 
 .pDesc {
-  font-size: 0.55rem;
+  font-size: 0.75rem;
   color: gray;
+  /* display: flex;
+  align-items: center; */
+}
+
+.descExpandIcon {
+  /* padding-top: 0.5rem */
+  translate: 0 0.45rem;
 }
 
 .pPrice {

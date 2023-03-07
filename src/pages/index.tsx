@@ -43,15 +43,11 @@ export default function Home({ latestProducts }: PageProps) {
   );
 }
 
-interface Props {
-  props: ProductInterface[];
-}
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
   try {
     await ConnectDB(process.env.MONGODB_URI);
     const products = await Product.find({}).limit(10);
-    let latestProducts: ProductInterface[];
+    let latestProducts: ProductInterface[] = [];
 
     // check if there any products, restructure and return them as props
     if (products) {
@@ -64,9 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
           images: p.images,
           available: p.available,
         };
-      }) as ProductInterface[];
-    } else {
-      latestProducts = [];
+      });
     }
     // console.log(latestProducts);
 

@@ -50,16 +50,16 @@ export default function Header() {
         </Link>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
-          <Link className={`${styles.navLink}`} href="/Shop/Pendants">
+          <Link className={`${styles.navLink}`} href="/shop/pendants">
             Pendants
           </Link>
-          <Link className={`${styles.navLink}`} href="/Shop/Rings">
+          <Link className={`${styles.navLink}`} href="/shop/rings">
             Rings
           </Link>
-          <Link className={`${styles.navLink}`} href="/Shop/EarRings">
+          <Link className={`${styles.navLink}`} href="/shop/earrings">
             Ear Rings
           </Link>
-          <Link className={`${styles.navLink}`} href="/Shop/Bracelets">
+          <Link className={`${styles.navLink}`} href="/shop/bracelets">
             Bracelets
           </Link>
           <Link className={`${styles.navLink}`} href="/contact">

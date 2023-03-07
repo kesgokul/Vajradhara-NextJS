@@ -6,7 +6,13 @@ import ProductCard from "@/components/cards/ProductCard";
 
 import { useRouter } from "next/router";
 import { Aboreto } from "@next/font/google";
-import { products } from "../../../../utils/fakeData";
+// import { products } from "../../../../utils/fakeData";
+import { GetStaticProps } from "next";
+import ConnectDB from "@/db/connect";
+import Product from "../../../db/model";
+
+import { ProductInterface } from "@/lib/interfaces";
+import { ParsedUrlQuery } from "querystring";
 
 const aboreto = Aboreto({
   subsets: ["latin"],
@@ -14,7 +20,11 @@ const aboreto = Aboreto({
   fallback: ["sans-serif"],
 });
 
-export default function Home() {
+interface PageProps {
+  products: ProductInterface[];
+}
+
+export default function Home({ products }: PageProps) {
   const router = useRouter();
   const { category } = router.query;
   return (
@@ -27,12 +37,12 @@ export default function Home() {
       </Head>
       <Header />
       <main className={`${styles.main} ${aboreto.className}`}>
-        <h1 className={styles.pageTitle}>{category}s</h1>
+        <h1 className={styles.pageTitle}>{category}</h1>
         <div className={styles.productsContainer}>
           {products.map((p, i) => {
             return (
               <div key={i} className={styles.product}>
-                <ProductCard {...p} images={["mt-neck.jpeg"]} />
+                <ProductCard {...p} />
               </div>
             );
           })}
@@ -43,4 +53,54 @@ export default function Home() {
   );
 }
 
-// export async function getStaticProps(context) {}
+// ============================= STATIC PROPS =====================================
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { category } = context.params!;
+
+  await ConnectDB(process.env.MONGODB_URI);
+
+  const result = await Product.find({ category: category });
+  let categoryProducts: ProductInterface[] = [];
+
+  if (result) {
+    categoryProducts = result.map((p) => {
+      return {
+        id: p._id.toString(),
+        name: p.name,
+        desc: p.desc,
+        price: p.price,
+        images: p.images,
+        available: p.available,
+      };
+    });
+  }
+
+  return {
+    props: {
+      products: categoryProducts,
+    },
+  };
+};
+
+// ============================================ STATIC PATHS =================================
+
+export const getStaticPaths = async () => {
+  await ConnectDB(process.env.MONGODB_URI);
+
+  const categories = await Product.distinct("category");
+
+  // creating the paths
+  const paths = categories.map((category) => {
+    return {
+      params: {
+        category: category,
+      },
+    };
+  });
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
+};
