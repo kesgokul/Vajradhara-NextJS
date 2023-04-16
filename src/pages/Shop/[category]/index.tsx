@@ -69,6 +69,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         id: p._id.toString(),
         name: p.name,
         desc: p.desc,
+        category: p.category,
         price: p.price,
         images: p.images,
         available: p.available,

@@ -1,0 +1,76 @@
+.main {
+  color: rgb(59, 59, 59);
+  display: grid;
+  place-items: center;
+  /* margin-block: 10rem; */
+  min-height: 100vh;
+}
+
+.container {
+  width: min(95%, 35rem);
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-size: 0.85rem;
+  font-weight: 300;
+  /* text-align: center; */
+  margin-bottom: 0.2rem;
+}
+
+.phoneInput input {
+  background: white;
+  color: black;
+  padding: 0.5rem 0.25rem;
+
+  border: 1px solid black;
+}
+.btnContainer {
+  /* background: white; */
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btnSendOTP {
+  background: rgb(40, 40, 40);
+  width: 50%;
+  padding-block: 0.75rem;
+}
+
+.btnSendOTP:is(:hover, :focus) {
+  background: black;
+}
+
+.divide {
+  margin-top: 2rem;
+  position: relative;
+  isolation: isolate;
+  height: 1px;
+  background: rgb(169, 168, 168);
+}
+
+.divideText {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  background-color: whitesmoke;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  width: 2rem;
+  border-radius: 100%;
+  text-align: center;
+}

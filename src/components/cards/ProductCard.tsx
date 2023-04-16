@@ -20,6 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 interface PageProps {
   id: string;
   name: string;
+  category: string;
   price: number;
   images: string[];
   desc: string;
@@ -27,6 +28,7 @@ interface PageProps {
 
 export default function ProductCard({
   name,
+  category,
   price,
   images,
   desc,
@@ -34,13 +36,13 @@ export default function ProductCard({
 }: PageProps) {
   const router = useRouter();
   const path = router.pathname;
-  const { category } = router.query;
+  // const { category } = router.query;
 
   const [showfullDesc, setShowFullDesc] = useState<boolean>(false);
   return (
     <Link
       className={styles.productLink}
-      href={`/Shop/${category}/${productId}`}
+      href={`/shop/${category}/${productId}`}
     >
       <div className={styles.card}>
         <motion.div layout className={styles.imgContainer}>

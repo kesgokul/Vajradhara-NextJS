@@ -5,6 +5,7 @@ import { UserContext, CartItem } from "@/context/UserContext";
 import { useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getTotalAmount } from "utils/helper-functions";
+import { useSession } from "next-auth/react";
 
 import { AiOutlineClose } from "react-icons/ai";
 import { GiBeveledStar } from "react-icons/gi";
@@ -18,6 +19,8 @@ const aboreto = Aboreto({
 
 export default function Cart() {
   const { setIsCartVisible, cartItems } = useContext(UserContext);
+  const { data: session } = useSession();
+  console.log(session);
 
   // function to get the total cart value
 
@@ -59,7 +62,7 @@ export default function Cart() {
       {cartItems.length >= 1 && (
         <Link
           className={`${styles.checkout} ${aboreto.className}`}
-          href={"/Checkout"}
+          href={`${session ? "/checkout" : "/login"}`}
         >
           Check out
           <GiBeveledStar

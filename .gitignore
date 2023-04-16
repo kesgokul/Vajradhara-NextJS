@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.tsx
+
+
+# secrets
+vajradhara-ecom-firebase-adminsdk-tdod5-87f4c6f605.json

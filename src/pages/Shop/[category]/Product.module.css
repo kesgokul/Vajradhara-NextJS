@@ -3,6 +3,7 @@
   flex-direction: column;
   padding-bottom: 5rem;
   background: var(--amethyst-bg-2);
+  /* background: whitesmoke; */
 }
 
 .product {
@@ -43,7 +44,7 @@
 
 .pName {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.125em;
   /* font-style: italic; */
 }
 
@@ -56,7 +57,7 @@
 
 .pPrice {
   margin-top: 2rem;
-  font-size: 1.25em;
+  font-size: 1.125em;
 }
 .buttons {
   margin-top: 2rem;
@@ -98,7 +99,7 @@
   background: var(--amethyst-bg);
   width: 100%;
   padding: 1rem 1rem 2rem 1rem;
-  box-shadow: inset 0 0 0.5rem rgb(156, 155, 155);
+  box-shadow: inset 0 0 0.25rem rgb(156, 155, 155);
 }
 
 .extraTitle {

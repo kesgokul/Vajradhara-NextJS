@@ -11,8 +11,8 @@ import ConnectDB from "@/db/connect";
 import Product from "../db/model";
 import { ProductInterface } from "@/lib/interfaces";
 
-import { Aboreto } from "@next/font/google";
 import { GetStaticProps } from "next";
+import { Aboreto } from "@next/font/google";
 const aboreto = Aboreto({
   subsets: ["latin"],
   weight: ["400"],
@@ -56,6 +56,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async () => {
           id: p._id.toString(),
           name: p.name,
           desc: p.desc,
+          category: p.category,
           price: p.price,
           images: p.images,
           available: p.available,

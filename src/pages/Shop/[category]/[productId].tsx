@@ -13,6 +13,10 @@ import { products } from "utils/fakeData";
 import { formatPrice } from "utils/helper-functions";
 import { UserContext, CartItem } from "@/context/UserContext";
 import { motion } from "framer-motion";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { ProductInterface } from "@/lib/interfaces";
+import ConnectDB from "@/db/connect";
+import ProductModel from "../../../db/model";
 
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Aboreto } from "@next/font/google";
@@ -22,15 +26,19 @@ const aboreto = Aboreto({
   fallback: ["sans-serif"],
 });
 
-export default function Product() {
+interface PageProps {
+  product: ProductInterface;
+}
+
+export default function Product({ product }: PageProps) {
   const [inCart, setInCart] = useState<boolean>(false);
   const { setCartItems, cartItems } = useContext(UserContext);
   const router = useRouter();
 
-  const { productId } = router.query;
-  const product = products[0];
+  // const { productId } = router.query;
+  // const product = products[0];
 
-  const [featureImg, setFeatureImg] = useState(product.image);
+  const [featureImg, setFeatureImg] = useState(product.images[0]);
 
   function handleAddToCart() {
     setCartItems((s) => [
@@ -38,7 +46,7 @@ export default function Product() {
       {
         productId: product.id,
         name: product.name,
-        image: product.image,
+        image: product.images[0],
         price: product.price,
       },
     ]);
@@ -63,7 +71,10 @@ export default function Product() {
     <>
       <Head>
         <title>{product.name}</title>
-        <meta name="description" content={`${product.desc}`} />
+        <meta
+          name="description"
+          content={`Handcrafter crystal jewellery ${product.desc}`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -141,4 +152,42 @@ export default function Product() {
       <Footer />
     </>
   );
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { productId } = context.params!;
+
+  await ConnectDB(process.env.MONGODB_URI);
+  const [result] = await ProductModel.find({ _id: productId });
+
+  return {
+    props: {
+      product: {
+        id: result._id.toString(),
+        name: result.name,
+        desc: result.desc,
+        category: result.category,
+        price: result.price,
+        images: result.images,
+      },
+    },
+  };
+};
+
+export async function getStaticPaths() {
+  await ConnectDB(process.env.MONGODB_URI);
+  const result = await ProductModel.find({});
+  const paths = result.map((p) => {
+    return {
+      params: {
+        category: p.category,
+        productId: p._id.toString(),
+      },
+    };
+  });
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
 }

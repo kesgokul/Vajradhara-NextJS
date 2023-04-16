@@ -35,13 +35,14 @@
 }
 
 .itemsContainer {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .noItems {
+  margin-top: 4rem;
   color: black;
   padding-left: 1rem;
   font-style: italic;
